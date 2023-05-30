@@ -1,0 +1,1132 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Review%20of%20Accelerometers/">
+      
+      
+        <link rel="next" href="../Software%20Components/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+    
+    
+      
+        <title>Review of Load Cells - obsidian-mkdocs template</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="obsidian-mkdocs template" class="md-header__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Review of Load Cells
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="obsidian-mkdocs template" class="md-nav__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    obsidian-mkdocs template
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Obsidian Notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Features/LaTeX%20Math%20Support/" class="md-nav__link">
+        LaTeX Math Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Features/Mermaid%20Diagrams/" class="md-nav__link">
+        Mermaid diagrams
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Features/Text%20Formatting/" class="md-nav__link">
+        Text Formatting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Hakec
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Hakec
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bar%20Cell%20Comparison%20and%20Performance%20Analysis/" class="md-nav__link">
+        Bar Cell Comparison and Performance Analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Calibrating%20a%203%20Axis%20Load%20Cell/" class="md-nav__link">
+        Calibrating a 3 Axis Load Cell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Calibrating%20a%206%20Axis%20Load%20Cell/" class="md-nav__link">
+        Calibrating a 6 Axis Load Cell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Calibrating%20a%20Single%20Axis%20Load%20Cell/" class="md-nav__link">
+        Calibrating a Single Axis Load Cell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Calibration%20Scripts/" class="md-nav__link">
+        Calibration Scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DAQ%20System%20Firmware/" class="md-nav__link">
+        DAQ System Firmware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Capture/" class="md-nav__link">
+        Data Capture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Design%20and%20Implementation%20of%20the%20DAQ/" class="md-nav__link">
+        Design and Implementation of the DAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hardware%20Components/" class="md-nav__link">
+        Haptic Force Feedback Modeling Framework: Component Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How%20Many%20Axes%20to%20Measure%20%28Force%20or%20Torque%29/" class="md-nav__link">
+        How Many Axes to Measure (Force or Torque)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Intro/" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Learning%20from%20Literature%20Review/" class="md-nav__link">
+        Learning from Literature Review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mounting%20the%20Force%20Sensor/" class="md-nav__link">
+        Mounting the Force Sensor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Procedure/" class="md-nav__link">
+        Procedure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Review%20of%20Accelerometers/" class="md-nav__link">
+        Review of Accelerometers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Review of Load Cells
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Components/" class="md-nav__link">
+        Software Components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../What%20to%20Measure%20and%20What%20It%20Means%20%28Variables%29/" class="md-nav__link">
+        What to Measure and What It Means (Variables)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../single-axis%20calibration%20script/" class="md-nav__link">
+        Single axis calibration script
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../six-axis%20calibration%20script/" class="md-nav__link">
+        Six axis calibration script
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../three-axis%20calibration%20script/" class="md-nav__link">
+        Three axis calibration script
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_22" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_22" id="__nav_3_22_label" tabindex="0">
+          Attachments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_22_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_22">
+          <span class="md-nav__icon md-icon"></span>
+          Attachments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Attachments/Media%20and%20Images/" class="md-nav__link">
+        Media and Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Topic%201/Note%201/" class="md-nav__link">
+        Note 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Topic%201/Note%202/" class="md-nav__link">
+        Note 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Review of Load Cells</h1>
+
+<p><strong>Previous force sensors used</strong></p>
+<p>Force Sensor Selection in Previous Studies Through our comprehensive review of the literature, we have identified that various sensors have been used in the past for haptic device characterization. The choice of sensors for haptic devices is not solely based on suitability and cost-effectiveness, as expensive F/T sensors are often utilized for measuring single-axis forces. Researchers may opt for more affordable sensors or have access to industrial-grade F/T sensors, which are regarded as benchmarks for force measurement in numerous haptics research labs requiring precise measurements</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>Load Cell Type</td>
+<td>Brand</td>
+<td>Cost</td>
+<td>Details</td>
+<td>Publications that use this sensor</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Loadstar-iLoad-Analog-a06e9f1dfc9d4b9a99b9ef45f072474f">Loadstar: iLoad Analo</a><a href="https://www.notion.so/Loadstar-iLoad-Analog-a06e9f1dfc9d4b9a99b9ef45f072474f">g</a></td>
+<td>Beam Load cell</td>
+<td>Loadstar</td>
+<td></td>
+<td>[143]</td>
+<td>[144]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Micro-Load-Cell-0-780g-CZL616C-485ecbf2adc44ad98d23cd95cce5e85c">Micro</a> <a href="https://www.notion.so/Micro-Load-Cell-0-780g-CZL616C-485ecbf2adc44ad98d23cd95cce5e85c">Load Cell</a> <a href="https://www.notion.so/Micro-Load-Cell-0-780g-CZL616C-485ecbf2adc44ad98d23cd95cce5e85c">(0-780</a><a href="https://www.notion.so/Micro-Load-Cell-0-780g-CZL616C-485ecbf2adc44ad98d23cd95cce5e85c">g)</a> -<a href="https://www.notion.so/Micro-Load-Cell-0-780g-CZL616C-485ecbf2adc44ad98d23cd95cce5e85c">CZL616C</a></td>
+<td>Beam Load cell</td>
+<td>Phidgets</td>
+<td>$6.00</td>
+<td>[145]</td>
+<td>[146], [147]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Load-Cell-10kg-Straight-Bar-TAL220-a1fe665eed1840b1ba09747ccbf50913">Load Cell</a> <a href="https://www.notion.so/Load-Cell-10kg-Straight-Bar-TAL220-a1fe665eed1840b1ba09747ccbf50913">- 10k</a><a href="https://www.notion.so/Load-Cell-10kg-Straight-Bar-TAL220-a1fe665eed1840b1ba09747ccbf50913">g,</a><a href="https://www.notion.so/Load-Cell-10kg-Straight-Bar-TAL220-a1fe665eed1840b1ba09747ccbf50913">Strai</a><a href="https://www.notion.so/Load-Cell-10kg-Straight-Bar-TAL220-a1fe665eed1840b1ba09747ccbf50913">g</a><a href="https://www.notion.so/Load-Cell-10kg-Straight-Bar-TAL220-a1fe665eed1840b1ba09747ccbf50913">ht</a> <a href="https://www.notion.so/Load-Cell-10kg-Straight-Bar-TAL220-a1fe665eed1840b1ba09747ccbf50913">Bar</a> <a href="https://www.notion.so/Load-Cell-10kg-Straight-Bar-TAL220-a1fe665eed1840b1ba09747ccbf50913">(TAL220)</a></td>
+<td>Beam Load cell</td>
+<td>Generic</td>
+<td>$9.50</td>
+<td>[148]</td>
+<td>[34], [60], [96], [100]</td>
+</tr>
+<tr>
+<td>Degraw 5kg Load Cell and HX711 Combo Pack Kit</td>
+<td>Beam Load cell</td>
+<td>Generic</td>
+<td>$10.00</td>
+<td>[149]</td>
+<td>[59], [59], [150]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Micro-Load-Cell-0-5kg-CZL635-ffa4825ff7c244f1b3a073a22e790530">Micro</a> <a href="https://www.notion.so/Micro-Load-Cell-0-5kg-CZL635-ffa4825ff7c244f1b3a073a22e790530">Load Cell</a> <a href="https://www.notion.so/Micro-Load-Cell-0-5kg-CZL635-ffa4825ff7c244f1b3a073a22e790530">(0-5k</a><a href="https://www.notion.so/Micro-Load-Cell-0-5kg-CZL635-ffa4825ff7c244f1b3a073a22e790530">g)</a> <a href="https://www.notion.so/Micro-Load-Cell-0-5kg-CZL635-ffa4825ff7c244f1b3a073a22e790530">CZL635</a></td>
+<td>Beam Load cell</td>
+<td>Phidgets</td>
+<td>$10.20</td>
+<td>[151]</td>
+<td>[36], [140], [152]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/SMT-50-Overload-Protected-S-Type-Load-Cell-40aaae340a4b414eba3023376a279bd3">SMT-50</a> <a href="https://www.notion.so/SMT-50-Overload-Protected-S-Type-Load-Cell-40aaae340a4b414eba3023376a279bd3">Overload</a> <a href="https://www.notion.so/SMT-50-Overload-Protected-S-Type-Load-Cell-40aaae340a4b414eba3023376a279bd3">Protected</a> <a href="https://www.notion.so/SMT-50-Overload-Protected-S-Type-Load-Cell-40aaae340a4b414eba3023376a279bd3">S-Type</a> <a href="https://www.notion.so/SMT-50-Overload-Protected-S-Type-Load-Cell-40aaae340a4b414eba3023376a279bd3">Load Cell</a></td>
+<td>S-Type</td>
+<td>Interface</td>
+<td>$450.00</td>
+<td>[153]</td>
+<td>[154]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Miniature-S-Beam-Jr-Load-Cell-LSB200-FSH00097-4ddb98e46a0b4b39bd30fdeb4454423b">Miniature</a> <a href="https://www.notion.so/Miniature-S-Beam-Jr-Load-Cell-LSB200-FSH00097-4ddb98e46a0b4b39bd30fdeb4454423b">S-Beam</a> <a href="https://www.notion.so/Miniature-S-Beam-Jr-Load-Cell-LSB200-FSH00097-4ddb98e46a0b4b39bd30fdeb4454423b">Jr. Load</a> <a href="https://www.notion.so/Miniature-S-Beam-Jr-Load-Cell-LSB200-FSH00097-4ddb98e46a0b4b39bd30fdeb4454423b">Cell</a> <a href="https://www.notion.so/Miniature-S-Beam-Jr-Load-Cell-LSB200-FSH00097-4ddb98e46a0b4b39bd30fdeb4454423b">LSB200 :</a> <a href="https://www.notion.so/Miniature-S-Beam-Jr-Load-Cell-LSB200-FSH00097-4ddb98e46a0b4b39bd30fdeb4454423b">FSH00097</a></td>
+<td>S-Type</td>
+<td>Futek</td>
+<td>$650.00</td>
+<td>[155]</td>
+<td>[104], [156], [157]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Instron-2519-Series-S-beam-Static-Load-Cell-a80e7956535b478d9f576feecbbe6ba4">Instron</a> <a href="https://www.notion.so/Instron-2519-Series-S-beam-Static-Load-Cell-a80e7956535b478d9f576feecbbe6ba4">2519</a> <a href="https://www.notion.so/Instron-2519-Series-S-beam-Static-Load-Cell-a80e7956535b478d9f576feecbbe6ba4">Series S-</a> <a href="https://www.notion.so/Instron-2519-Series-S-beam-Static-Load-Cell-a80e7956535b478d9f576feecbbe6ba4">beam</a> <a href="https://www.notion.so/Instron-2519-Series-S-beam-Static-Load-Cell-a80e7956535b478d9f576feecbbe6ba4">Static</a> <a href="https://www.notion.so/Instron-2519-Series-S-beam-Static-Load-Cell-a80e7956535b478d9f576feecbbe6ba4">Load Cell</a></td>
+<td>S-Type</td>
+<td>Instrom</td>
+<td>$2,950.00</td>
+<td>[158]</td>
+<td>[59], [159], [160]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/HSFPAR-Series-Micro-Force-Sensor-ea28ef7be6774043bacfe22aaecc92f2">HSFPAR</a> <a href="https://www.notion.so/HSFPAR-Series-Micro-Force-Sensor-ea28ef7be6774043bacfe22aaecc92f2">Series -</a> <a href="https://www.notion.so/HSFPAR-Series-Micro-Force-Sensor-ea28ef7be6774043bacfe22aaecc92f2">Micro Force</a> <a href="https://www.notion.so/HSFPAR-Series-Micro-Force-Sensor-ea28ef7be6774043bacfe22aaecc92f2">Sensor</a></td>
+<td>Buttom Load Cell</td>
+<td>Alps</td>
+<td>$8.00</td>
+<td>[161]</td>
+<td>[162]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/FS2050-0000-1500-G-MEAS-Force-Sensor-Elements-load-cells-e91892b3b89d401eb4f0c31f076a98c1">FS20500000-1500-G</a> <a href="https://www.notion.so/FS2050-0000-1500-G-MEAS-Force-Sensor-Elements-load-cells-e91892b3b89d401eb4f0c31f076a98c1">: MEAS</a> <a href="https://www.notion.so/FS2050-0000-1500-G-MEAS-Force-Sensor-Elements-load-cells-e91892b3b89d401eb4f0c31f076a98c1">Force</a> <a href="https://www.notion.so/FS2050-0000-1500-G-MEAS-Force-Sensor-Elements-load-cells-e91892b3b89d401eb4f0c31f076a98c1">Sensor Elements</a> <a href="https://www.notion.so/FS2050-0000-1500-G-MEAS-Force-Sensor-Elements-load-cells-e91892b3b89d401eb4f0c31f076a98c1">|</a> <a href="https://www.notion.so/FS2050-0000-1500-G-MEAS-Force-Sensor-Elements-load-cells-e91892b3b89d401eb4f0c31f076a98c1">load cells</a></td>
+<td>Buttom Load Cell</td>
+<td>MEAS|TE</td>
+<td>$100.00</td>
+<td>[163]</td>
+<td>[164]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/FC2231-0000-0100-L-LOAD-CELL-MSP6951-ND-9e9293ef6a4648c09e2faf130aefa1f0">FC2231-</a> <a href="https://www.notion.so/FC2231-0000-0100-L-LOAD-CELL-MSP6951-ND-9e9293ef6a4648c09e2faf130aefa1f0">0000-0100-L</a> <a href="https://www.notion.so/FC2231-0000-0100-L-LOAD-CELL-MSP6951-ND-9e9293ef6a4648c09e2faf130aefa1f0">LOAD CELL</a> <a href="https://www.notion.so/FC2231-0000-0100-L-LOAD-CELL-MSP6951-ND-9e9293ef6a4648c09e2faf130aefa1f0">(MSP6951-</a> <a href="https://www.notion.so/FC2231-0000-0100-L-LOAD-CELL-MSP6951-ND-9e9293ef6a4648c09e2faf130aefa1f0">ND)</a></td>
+<td>Buttom Load Cell</td>
+<td>MEAS|TE</td>
+<td>$108.00</td>
+<td>[165]</td>
+<td>[166]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/LMA-A-50N-Small-sized-Compression-Load-Cell-b40c9d6c9f204c82bb0d637584bbabf5">LMA-A-50N</a> <a href="https://www.notion.so/LMA-A-50N-Small-sized-Compression-Load-Cell-b40c9d6c9f204c82bb0d637584bbabf5">Small-sized</a> <a href="https://www.notion.so/LMA-A-50N-Small-sized-Compression-Load-Cell-b40c9d6c9f204c82bb0d637584bbabf5">Compression</a> <a href="https://www.notion.so/LMA-A-50N-Small-sized-Compression-Load-Cell-b40c9d6c9f204c82bb0d637584bbabf5">Load Cell</a></td>
+<td>Buttom Load Cell</td>
+<td></td>
+<td>$300.00</td>
+<td>[167]</td>
+<td>[168]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/MLP-10-Series-mini-low-profile-Load-Cell-cc6fa93ff0024cba8f83fc6c8750863f">MLP-10</a> <a href="https://www.notion.so/MLP-10-Series-mini-low-profile-Load-Cell-cc6fa93ff0024cba8f83fc6c8750863f">Series mini low profile Load Cell</a></td>
+<td>Buttom Load Cell</td>
+<td></td>
+<td>$350.00</td>
+<td>[169]</td>
+<td>[170], [171]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Miniature-Threaded-Load-Cell-Button-LLB210-da341ffd76c843f2b9babaa81d827b4e">Miniature</a> <a href="https://www.notion.so/Miniature-Threaded-Load-Cell-Button-LLB210-da341ffd76c843f2b9babaa81d827b4e">Threaded</a> <a href="https://www.notion.so/Miniature-Threaded-Load-Cell-Button-LLB210-da341ffd76c843f2b9babaa81d827b4e">Load Cell</a> <a href="https://www.notion.so/Miniature-Threaded-Load-Cell-Button-LLB210-da341ffd76c843f2b9babaa81d827b4e">Button</a> <a href="https://www.notion.so/Miniature-Threaded-Load-Cell-Button-LLB210-da341ffd76c843f2b9babaa81d827b4e">LLB210</a></td>
+<td>Buttom Load Cell</td>
+<td>Futek</td>
+<td>$850.00</td>
+<td>[172]</td>
+<td>[173]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/ElectroSamson-Brecknell-c89c6be8c34c41ab8166d1699e68b0f2">ElectroSamson</a> <a href="https://www.notion.so/ElectroSamson-Brecknell-c89c6be8c34c41ab8166d1699e68b0f2">- Brecknell</a></td>
+<td>Force Gauge</td>
+<td>Bracknell</td>
+<td>$60.00</td>
+<td>[95]</td>
+<td>[94]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Lutron-FORCE-GAUGE-FG-5000A-232-33e5e2821a4145679d91ab2e405905b9">Lutron FORCE</a> <a href="https://www.notion.so/Lutron-FORCE-GAUGE-FG-5000A-232-33e5e2821a4145679d91ab2e405905b9">GAUGE FG-</a> <a href="https://www.notion.so/Lutron-FORCE-GAUGE-FG-5000A-232-33e5e2821a4145679d91ab2e405905b9">5000A-232</a></td>
+<td>Force Gauge</td>
+<td>Lutron</td>
+<td>$180.00</td>
+<td>[174]</td>
+<td>[175]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Shimpo-FG-3000-Digital-Force-Gauge-931de2d32f8f41d9bdb3b7246ee31c1b">Shimpo FG-</a> <a href="https://www.notion.so/Shimpo-FG-3000-Digital-Force-Gauge-931de2d32f8f41d9bdb3b7246ee31c1b">3000 Di</a><a href="https://www.notion.so/Shimpo-FG-3000-Digital-Force-Gauge-931de2d32f8f41d9bdb3b7246ee31c1b">g</a><a href="https://www.notion.so/Shimpo-FG-3000-Digital-Force-Gauge-931de2d32f8f41d9bdb3b7246ee31c1b">ital</a> <a href="https://www.notion.so/Shimpo-FG-3000-Digital-Force-Gauge-931de2d32f8f41d9bdb3b7246ee31c1b">Force Gauge</a></td>
+<td>Force Gauge</td>
+<td>Shimpo</td>
+<td>$290.00</td>
+<td>[176]</td>
+<td>[24]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Sauter-FK-100-Force-Gauge-4dd0df23aa1c44acbe50555dc7df69b2">Sauter FK 100</a> <a href="https://www.notion.so/Sauter-FK-100-Force-Gauge-4dd0df23aa1c44acbe50555dc7df69b2">Force Gauge</a></td>
+<td>Force Gauge</td>
+<td>Sauter</td>
+<td>$400.00</td>
+<td>[177]</td>
+<td>[178]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/475044-High-Capacity-Force-Gauge-7aa1e79201f2494798476e196f03f627">475044: High</a> <a href="https://www.notion.so/475044-High-Capacity-Force-Gauge-7aa1e79201f2494798476e196f03f627">Capacit</a><a href="https://www.notion.so/475044-High-Capacity-Force-Gauge-7aa1e79201f2494798476e196f03f627">y</a> <a href="https://www.notion.so/475044-High-Capacity-Force-Gauge-7aa1e79201f2494798476e196f03f627">Force</a> <a href="https://www.notion.so/475044-High-Capacity-Force-Gauge-7aa1e79201f2494798476e196f03f627">Gauge</a></td>
+<td>Force Gauge</td>
+<td>Extech</td>
+<td>$600.00</td>
+<td>[179]</td>
+<td>[180]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/IMADA-ZTS-2N-Digital-force-gauge-2N-0-01N-15536f2e4617460bb0787cc70b745414">IMADA ZTS-</a> <a href="https://www.notion.so/IMADA-ZTS-2N-Digital-force-gauge-2N-0-01N-15536f2e4617460bb0787cc70b745414">2N Di</a><a href="https://www.notion.so/IMADA-ZTS-2N-Digital-force-gauge-2N-0-01N-15536f2e4617460bb0787cc70b745414">g</a><a href="https://www.notion.so/IMADA-ZTS-2N-Digital-force-gauge-2N-0-01N-15536f2e4617460bb0787cc70b745414">ital force</a> <a href="https://www.notion.so/IMADA-ZTS-2N-Digital-force-gauge-2N-0-01N-15536f2e4617460bb0787cc70b745414">g</a><a href="https://www.notion.so/IMADA-ZTS-2N-Digital-force-gauge-2N-0-01N-15536f2e4617460bb0787cc70b745414">auge (2N/0</a><a href="https://www.notion.so/IMADA-ZTS-2N-Digital-force-gauge-2N-0-01N-15536f2e4617460bb0787cc70b745414">,</a><a href="https://www.notion.so/IMADA-ZTS-2N-Digital-force-gauge-2N-0-01N-15536f2e4617460bb0787cc70b745414">01N)</a></td>
+<td>Force Gauge</td>
+<td>Imada</td>
+<td>$650.00</td>
+<td>[181]</td>
+<td>[182]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/IMADA-ZTS-20N-Digital-force-gauge-20N-0-01N-d854eb9ff868495dabba4671e5dab2f0">IMADA ZTS-</a> <a href="https://www.notion.so/IMADA-ZTS-20N-Digital-force-gauge-20N-0-01N-d854eb9ff868495dabba4671e5dab2f0">20N Di</a><a href="https://www.notion.so/IMADA-ZTS-20N-Digital-force-gauge-20N-0-01N-d854eb9ff868495dabba4671e5dab2f0">g</a><a href="https://www.notion.so/IMADA-ZTS-20N-Digital-force-gauge-20N-0-01N-d854eb9ff868495dabba4671e5dab2f0">ital force</a> <a href="https://www.notion.so/IMADA-ZTS-20N-Digital-force-gauge-20N-0-01N-d854eb9ff868495dabba4671e5dab2f0">g</a><a href="https://www.notion.so/IMADA-ZTS-20N-Digital-force-gauge-20N-0-01N-d854eb9ff868495dabba4671e5dab2f0">auge (20N/0</a><a href="https://www.notion.so/IMADA-ZTS-20N-Digital-force-gauge-20N-0-01N-d854eb9ff868495dabba4671e5dab2f0">,</a><a href="https://www.notion.so/IMADA-ZTS-20N-Digital-force-gauge-20N-0-01N-d854eb9ff868495dabba4671e5dab2f0">01N)</a></td>
+<td>Force Gauge</td>
+<td>Imada</td>
+<td>$650.00</td>
+<td>[181]</td>
+<td>[134]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/IMADA-ZTS-50N-Digital-force-gauge-50N-0-01N-edf079f28b6749db87154e508332851d">IMADA ZTS-</a> <a href="https://www.notion.so/IMADA-ZTS-50N-Digital-force-gauge-50N-0-01N-edf079f28b6749db87154e508332851d">50N Di</a><a href="https://www.notion.so/IMADA-ZTS-50N-Digital-force-gauge-50N-0-01N-edf079f28b6749db87154e508332851d">g</a><a href="https://www.notion.so/IMADA-ZTS-50N-Digital-force-gauge-50N-0-01N-edf079f28b6749db87154e508332851d">ital force</a> <a href="https://www.notion.so/IMADA-ZTS-50N-Digital-force-gauge-50N-0-01N-edf079f28b6749db87154e508332851d">g</a><a href="https://www.notion.so/IMADA-ZTS-50N-Digital-force-gauge-50N-0-01N-edf079f28b6749db87154e508332851d">auge (50N/0</a><a href="https://www.notion.so/IMADA-ZTS-50N-Digital-force-gauge-50N-0-01N-edf079f28b6749db87154e508332851d">,</a><a href="https://www.notion.so/IMADA-ZTS-50N-Digital-force-gauge-50N-0-01N-edf079f28b6749db87154e508332851d">01N)</a></td>
+<td>Force Gauge</td>
+<td>Imada</td>
+<td>$650.00</td>
+<td>[181]</td>
+<td>[42], [88], [92]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/DS2-Digital-Force-Gauge-7703a86eb549490e9677095ff5490665">DS2 Di</a><a href="https://www.notion.so/DS2-Digital-Force-Gauge-7703a86eb549490e9677095ff5490665">g</a><a href="https://www.notion.so/DS2-Digital-Force-Gauge-7703a86eb549490e9677095ff5490665">ital</a> <a href="https://www.notion.so/DS2-Digital-Force-Gauge-7703a86eb549490e9677095ff5490665">Force Gauge</a></td>
+<td>Force Gauge</td>
+<td>Imada</td>
+<td>$750.00</td>
+<td>[183]</td>
+<td>[164]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/FGJN-5-Digital-Force-Gauge-f656f30aed534a1bb712221682eefb70">FGJN-5 Di</a><a href="https://www.notion.so/FGJN-5-Digital-Force-Gauge-f656f30aed534a1bb712221682eefb70">g</a><a href="https://www.notion.so/FGJN-5-Digital-Force-Gauge-f656f30aed534a1bb712221682eefb70">ital</a> <a href="https://www.notion.so/FGJN-5-Digital-Force-Gauge-f656f30aed534a1bb712221682eefb70">Force Gauge</a></td>
+<td>Force Gauge</td>
+<td>Shimpo</td>
+<td>$800.00</td>
+<td>[184]</td>
+<td>[185]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Undefined-c1bdbf31feb44e4d96b534103db40c13">Undefined</a></td>
+<td>Force Gauge</td>
+<td></td>
+<td></td>
+<td></td>
+<td>[186]–[188]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/VARIENSE-FSE103-695541843b1a4e4ca9cdfcddde38f9e6">VARIENSE</a> <a href="https://www.notion.so/VARIENSE-FSE103-695541843b1a4e4ca9cdfcddde38f9e6">FSE103</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>Variense</td>
+<td>$800.00</td>
+<td>[189]</td>
+<td>[40], [41]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/6-axis-force-sensor-Leptrino-FFS055YA501U6-ae72388ee3664f42ab61fb1db054c944">6-axis force sensor (Leptrino FFS055YA501U6)</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>Leptrino</td>
+<td>$1,000.00</td>
+<td>[190]</td>
+<td>[39]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/FNZ100N-Forsentek-3-axis-load-cell-0-100N-Multi-axis-force-sensor-c1a7bcc1b3b044bf9354f1788bd53c1b">FNZ100N</a> <a href="https://www.notion.so/FNZ100N-Forsentek-3-axis-load-cell-0-100N-Multi-axis-force-sensor-c1a7bcc1b3b044bf9354f1788bd53c1b">Forsentek 3 axis load cell 0-100N Multi-axis force sensor</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>Forsentek</td>
+<td>$1200.00</td>
+<td>[191]</td>
+<td>[192], [193]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/USL06-H5-Force-Sensor-64e85a4b0f354cda9f6823fb0696757b">USL06-H5 Force</a> <a href="https://www.notion.so/USL06-H5-Force-Sensor-64e85a4b0f354cda9f6823fb0696757b">Sensor</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>Tec Gihan</td>
+<td>$1,800.00</td>
+<td>[194]</td>
+<td>[195]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/ATI-Gamma-SI-65-5-43bb4f4f12bc40a3a645354e27bc33d8">ATI Gamma SI-</a> <a href="https://www.notion.so/ATI-Gamma-SI-65-5-43bb4f4f12bc40a3a645354e27bc33d8">65-5</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>ATI</td>
+<td>$5,200.00</td>
+<td>[196]</td>
+<td>[197]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/F-T-Sensor-ATI-Nano17-e226e302a39e473989f3687bad324c75">F/T Sensor ATI</a> <a href="https://www.notion.so/F-T-Sensor-ATI-Nano17-e226e302a39e473989f3687bad324c75">Nano17</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>ATI</td>
+<td>$4,800.00</td>
+<td>[198]</td>
+<td>[27], [107], [159], [199]–[201]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/F-T-Sensor-mini45-9c84b73f1d6a4f50be6057a557fd5a9b">F/T Sensor mini45</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>ATI</td>
+<td>$4,600.00</td>
+<td>[202]</td>
+<td>[49], [50], [203]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/AMTI-HE6X6-10-5-6-DOF-grounded-force-torque-plate-fb693afad4d64c49bab9f6254bf78908">AMTI HE6X6-105 6-DOF</a> <a href="https://www.notion.so/AMTI-HE6X6-10-5-6-DOF-grounded-force-torque-plate-fb693afad4d64c49bab9f6254bf78908">g</a><a href="https://www.notion.so/AMTI-HE6X6-10-5-6-DOF-grounded-force-torque-plate-fb693afad4d64c49bab9f6254bf78908">rounded</a> <a href="https://www.notion.so/AMTI-HE6X6-10-5-6-DOF-grounded-force-torque-plate-fb693afad4d64c49bab9f6254bf78908">force/torque plate</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>AMTI</td>
+<td>-</td>
+<td>[204]</td>
+<td>[52], [53]</td>
+</tr>
+<tr>
+<td><a href="https://www.notion.so/Capacitive-6-axis-force-sensor-500N-DynPick-WACOH-TECH-9c0f822dfdd94a088016714ddd4acf81">Capacitive 6-axis force sensor (500N / D</a><a href="https://www.notion.so/Capacitive-6-axis-force-sensor-500N-DynPick-WACOH-TECH-9c0f822dfdd94a088016714ddd4acf81">y</a><a href="https://www.notion.so/Capacitive-6-axis-force-sensor-500N-DynPick-WACOH-TECH-9c0f822dfdd94a088016714ddd4acf81">nPick) /</a> <a href="https://www.notion.so/Capacitive-6-axis-force-sensor-500N-DynPick-WACOH-TECH-9c0f822dfdd94a088016714ddd4acf81">WACOH-TECH</a></td>
+<td>Multi-Axis Force Sensor</td>
+<td>Wacoh</td>
+<td>$3500.00</td>
+<td>[205]</td>
+<td>[51]</td>
+</tr>
+</tbody>
+</table>
+<p>Table 5 The above table is a summary of the sensors identified in our literature review, providing an approximate cost range for each type of force sensor. It is important to note that the prices listed in the table are indicative and may be outdated and do not account for the cost of the amplifier or any other equipment required.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
